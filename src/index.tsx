@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Login from "./Screens/Auth/Login";
 import NoPage from "./Screens/_NotFound/NoPage";
+import Signup from "./Screens/Auth/Signup";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,7 +17,7 @@ root.render(
           <Routes>
               <Route path="/" element={<App />}>
                   <Route path="login" element={<Login />} />
-                  {/*<Route path="signup" element={<Signup />} />*/}
+                  <Route path="signup" element={<Signup />} />
                   <Route path="*" element={<NoPage />} />
               </Route>
           </Routes>
