@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import AuthForm from "./_Form";
+import {Link} from "react-router-dom";
 
 export default function Login() {
     const [username, setUsername] = useState("")
@@ -13,9 +14,9 @@ export default function Login() {
 
     return (
         <>
-            <div>
-                <AuthForm username={username} setUsername={setUsername} password={password} setPassword={setPassword}/>
-            </div>
+                <AuthForm label={"Login"} username={username} setUsername={setUsername} password={password} setPassword={setPassword}>
+                    <p>Dont have an account? <Link to={"/register"}>Register</Link></p>
+                </AuthForm>
         </>
     )
 }
