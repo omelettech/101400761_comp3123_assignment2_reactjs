@@ -1,10 +1,11 @@
+import React, {SetStateAction} from "react";
 
 
 interface AuthFormProps{
     username:string
-    setUsername:()=>void
+    setUsername:React.Dispatch<React.SetStateAction<string>>
     password:string
-    setPassword:()=>void
+    setPassword:React.Dispatch<React.SetStateAction<string>>
 
 }
 export default function AuthForm({username,password,setUsername,setPassword}:AuthFormProps){
@@ -18,11 +19,12 @@ export default function AuthForm({username,password,setUsername,setPassword}:Aut
         }}>
             <input
                 value={username}
-                onChange={setUsername}
+                onChange={(val)=>setUsername(val.target.value)}
             />
             <input
+                type={"password"}
                 value={password}
-                onChange={setPassword}
+                onChange={(val)=>setPassword(val.target.value)}
             />
         </div>
 
